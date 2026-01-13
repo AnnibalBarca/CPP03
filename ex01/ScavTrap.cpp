@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(const std::string name)
+ScavTrap::ScavTrap(const std::string& name)
     : ClapTrap(name)
 {
     _hitPoints = 100;
@@ -9,7 +9,13 @@ ScavTrap::ScavTrap(const std::string name)
     std::cout << "ScavTrap " << _name << " has been constructed\n";
 }
 ScavTrap::ScavTrap()
-{}
+    : ClapTrap("DefaultScav")
+{
+    _hitPoints = 100;
+    _energyPoints = 50;
+    _attackDamage = 20;
+    std::cout << "ScavTrap " << _name << " has been constructed\n";
+}
 
 ScavTrap::ScavTrap(const ScavTrap &src)
     : ClapTrap(src)

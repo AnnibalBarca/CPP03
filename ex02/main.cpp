@@ -1,23 +1,16 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-int main() {
-    ScavTrap a("Alice");
-    // ClapTrap b("Bob");
-
-    a.attack("EvilBot");
-
-    // b.takeDamage(3);
-
-    // b.beRepaired(2);
-
-    for (int i = 0; i < 12; ++i)
-        a.attack("Target");
-
-    a.beRepaired(1);
-    a.takeDamage(100);
-    a.guardGate();
-    // b.attack("Ghost");       // should not be allowed when HP == 0
-    // b.beRepaired(5);         // still not allowed if rule forbids actions when HP == 0
-
+int main(){
+    FragTrap s("Fragenger");
+    s.attack("Enemy");
+    for(int i=0;i<51;++i) s.attack("Target");
+    s.beRepaired(10);
+    s.takeDamage(120);
+    s.highFivesGuys();
+    FragTrap t(s);
+    FragTrap u;
+    u = s;
+    FragTrap* p = new FragTrap("Heap");
+    delete p;
     return 0;
 }
