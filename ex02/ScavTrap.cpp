@@ -8,8 +8,7 @@ ScavTrap::ScavTrap(const std::string name)
     _attackDamage = 20;
     std::cout << "ScavTrap " << _name << " has been constructed\n";
 }
-ScavTrap::ScavTrap()
-{}
+
 
 ScavTrap::ScavTrap(const ScavTrap &src)
     : ClapTrap(src)
@@ -78,6 +77,6 @@ void ScavTrap::beRepaired(unsigned int amount)
 
 void ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap " << _name << "is in gate keeper mode" << std::endl;
+    std::cout << "ScavTrap " << _name << " is in gate keeper mode" << std::endl;
 }
 

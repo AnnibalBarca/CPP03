@@ -16,9 +16,6 @@ int main() {
     a.beRepaired(1);
     a.takeDamage(100);
     a.guardGate();
-
-    ScavTrap *b = new ScavTrap();
-    delete b;
     // b.attack("Ghost");       // should not be allowed when HP == 0
     // b.beRepaired(5);         // still not allowed if rule forbids actions when HP == 0
 
