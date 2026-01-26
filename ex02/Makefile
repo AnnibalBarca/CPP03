@@ -1,22 +1,24 @@
-CXX = g++
+CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-
-SRCS = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp main.cpp 
+SRCS = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp main.cpp
+HDRS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 OBJS = $(SRCS:.cpp=.o)
-TARGET = scavtrap
+NAME = fragtrap
 
-all: $(TARGET)
+all: $(NAME)
 
-$(TARGET): $(OBJS)
+$(NAME): $(OBJS) $(HDRS)
 	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJS:.o=.d)
 
 fclean: clean
-	rm -f $(TARGET)
+	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

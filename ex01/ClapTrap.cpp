@@ -6,7 +6,6 @@ ClapTrap::ClapTrap(const std::string& name)
     std::cout << "ClapTrap " << _name << " has been constructed\n";
 }
 
-
 ClapTrap::ClapTrap(const ClapTrap &src)
 {
     if (&src != this)
